@@ -1,6 +1,8 @@
 // This problem is garbage.
-// I appreciate the refresher on virtual functions but seriously refise to
+// passes all cases
 
+int idp= 0;
+int ids= 0;
 class Person{
     public:
         int age;
@@ -15,9 +17,11 @@ class Professor : public Person{
       int cur_id;
       void getdata(){
         cin >> name >> age >> publications;
+        idp++;
+        cur_id= idp;
       }
       void putdata(){
-        cout << name << " " << age << " " << publications << " " << cur_id;
+        cout << name << " " << age << " " << publications << " " << cur_id << "\n";
       }
 
 };
@@ -34,11 +38,11 @@ class Student : public Person{
         i++;
         marks = marks + temp;
       };
-
+      ids++;
+      cur_id= ids;
     }
     void putdata(){
-      cout << name << " " << age << " " << marks << "\n";
-      cout << cur_id;
+      cout << name << " " << age << " " << marks << " " << cur_id << "\n";
     }
 
 };
